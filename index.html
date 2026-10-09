@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#35ff82">
+
+    <title>TIMEUP</title>
+
+
+</head>
+
+<body>
+
+    <!-- DECORACIÓN HUD -->
+    <div class="hud hud-left"></div>
+    <div class="hud hud-right"></div>
+
+    <main class="app">
+
+        <!-- =========================
+             HEADER
+        ========================== -->
+
+        <header class="top-header">
+
+            <div class="logo">
+                <span>TIME</span><strong>UP</strong>
+            </div>
+
+
+            <div class="header-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             RELOJ PRINCIPAL
+        ========================== -->
+
+        <section class="hero-clock">
+
+            <div class="tech-corner tl"></div>
+            <div class="tech-corner tr"></div>
+            <div class="tech-corner bl"></div>
+            <div class="tech-corner br"></div>
+
+            <div class="hero-top-line">
+                <span></span>
+                HORA ACTUAL
+                <span></span>
+            </div>
+
+            <div class="clock-content">
+
+                <div class="clock-side left">
+
+                    <div>▌ HORAS</div>
+                    <div>▌ MINUTOS</div>
+                    <div>▌ SEGUNDOS</div>
+
+                </div>
+
+
+                <div class="clock-center">
+
+                    <div id="clock">
+                        00:00:00
+                    </div>
+
+                </div>
+
+
+                <div class="clock-side right">
+
+                    <div>AM / PM ▌</div>
+                    <div>FECHA ▌</div>
+                    <div>ALARMA ▌</div>
+                    <div>CRONÓMETRO ▌</div>
+                    <div>MÚSICA ▌</div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FECHA -->
+
+            <div class="date-display">
+
+                <span class="calendar-icon">▦</span>
+
+                <span id="date">
+                    CARGANDO...
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PANELES
+        ========================== -->
+
+        <section class="panels">
+
+
+            <!-- =====================
+                 CRONÓMETRO
+            ====================== -->
+
+            <article class="panel stopwatch-panel">
+
+                <div class="panel-top">
+
+                    <div class="panel-title">
+                        <span class="title-icon">◷</span>
+                        CRONÓMETRO
+                    </div>
+
+                    <div class="dots">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+
+                </div>
+
+
+                <div class="inner-display">
+
+                    <div id="stopwatch">
+                        00:00:00
+                    </div>
+
+                    <div class="units">
+                        <span>HORAS</span>
+                        <span>MINUTOS</span>
+                        <span>SEGUNDOS</span>
+                    </div>
+
+                </div>
+
+
+                <div class="stopwatch-actions">
+
+                    <button id="startBtn" class="round-button">
+                        <b>▶</b>
+                        <small>INICIAR</small>
+                    </button>
+
+                    <button id="pauseBtn" class="round-button">
+                        <b>Ⅱ</b>
+                        <small>PAUSAR</small>
+                    </button>
+
+                    <button id="resetBtn" class="round-button">
+                        <b>↻</b>
+                        <small>REINICIAR</small>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =====================
+                 ALARMA
+            ====================== -->
+
+            <article class="panel alarm-panel">
+
+                <div class="panel-top">
+
+                    <div class="panel-title">
+                        <span class="title-icon">♧</span>
+                        ALARMA
+                    </div>
+
+                    <div class="dots">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+
+                </div>
+
+
+                <div class="alarm-display">
+
+                    <div class="arrow">⌃</div>
+
+                    <input
+                        type="time"
+                        id="alarmTime"
+                    >
+
+                    <div class="arrow">⌄</div>
+
+                </div>
+
+
+                <button
+                    id="setAlarmBtn"
+                    class="activate-alarm"
+                >
+                    ♧ &nbsp; ACTIVAR ALARMA
+                </button>
+
+
+                <div class="alarm-status-box">
+
+                    <span>◷</span>
+
+                    <p id="alarmStatus">
+                        Sin alarma programada
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- =====================
+                 MÚSICA
+            ====================== -->
+
+            <article class="panel music-panel">
+
+                <div class="panel-top">
+
+                    <div class="panel-title">
+                        <span class="title-icon">♫</span>
+                        MÚSICA
+                    </div>
+
+                    <div class="dots">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+
+                </div>
+
+
+                <audio
+                    id="music"
+                    src="musica.mp3"
+                    loop>
+                </audio>
+
+
+                <div class="song-box">
+
+                    <div class="wave">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                    <div class="song-info">
+
+                        <strong>
+                            AMBIENT FOCUS
+                        </strong>
+
+                        <small>
+                            ELECTRONIC
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="music-time">
+                    <span>0:00</span>
+                    <span>∞</span>
+                </div>
+
+
+                <div class="music-progress">
+                    <span></span>
+                </div>
+
+
+                <div class="music-actions">
+
+                    <button>◀</button>
+
+                    <button
+                        id="playMusicBtn"
+                        class="play-music"
+                    >
+                        ▶
+                    </button>
+
+                    <button
+                        id="pauseMusicBtn"
+                    >
+                        Ⅱ
+                    </button>
+
+                    <button>▶</button>
+
+                </div>
+
+
+                <div class="volume-row">
+
+                    <span>🔊</span>
+
+                    <input
+                        type="range"
+                        id="volume"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value="0.5"
+                    >
+
+                    <span>70%</span>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

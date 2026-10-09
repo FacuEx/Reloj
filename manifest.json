@@ -1,0 +1,23 @@
+{
+    "name": "TIMEUP",
+    "short_name": "TIMEUP",
+    "description": "Tu tiempo, bajo control",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#010403",
+    "theme_color": "#35ff82",
+    "orientation": "portrait",
+
+    "icons": [
+        {
+            "src": "TIMEUP-icon-192-complete.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "TIMEUP-icon-512-complete.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

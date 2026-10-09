@@ -1,0 +1,1483 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --green: #35ff82;
+    --green-light: #8affb5;
+    --green-dark: #063c25;
+
+    --black: #010403;
+    --panel: #03150d;
+
+    --line: rgba(53, 255, 130, .42);
+
+    --white: #effff5;
+    --gray: #718d7d;
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 30%,
+            rgba(20, 130, 65, .10),
+            transparent 55%
+        ),
+        #010403;
+
+    color: var(--white);
+
+    font-family: 'Orbitron', monospace;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   CUADRÍCULA
+===================================================== */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(53, 255, 130, .055) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(53, 255, 130, .055) 1px,
+            transparent 1px
+        );
+
+    background-size: 34px 34px;
+
+    pointer-events: none;
+
+    z-index: -3;
+}
+
+
+/* =====================================================
+   LÍNEAS TECNOLÓGICAS
+===================================================== */
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 49.8%,
+            rgba(53,255,130,.04) 50%,
+            transparent 50.2%
+        );
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+
+/* =====================================================
+   HUD DECORACIÓN
+===================================================== */
+
+.hud {
+
+    position: fixed;
+
+    top: 100px;
+
+    width: 120px;
+
+    height: 600px;
+
+    opacity: .35;
+
+    pointer-events: none;
+}
+
+
+.hud-left {
+
+    left: 0;
+
+    border-right: 1px solid rgba(53,255,130,.15);
+}
+
+
+.hud-right {
+
+    right: 0;
+
+    border-left: 1px solid rgba(53,255,130,.15);
+}
+
+
+/* =====================================================
+   APP
+===================================================== */
+
+.app {
+
+    width: min(1250px, 94%);
+
+    margin: auto;
+
+    padding: 25px 0 60px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.top-header {
+
+    text-align: center;
+
+    position: relative;
+
+    margin-bottom: 25px;
+}
+
+
+.logo {
+
+    font-size: clamp(50px, 7vw, 82px);
+
+    font-weight: 800;
+
+    letter-spacing: 5px;
+
+    line-height: 1;
+
+    color: #f5fff8;
+
+    text-shadow:
+
+        0 0 8px rgba(53,255,130,.8),
+
+        0 0 25px rgba(53,255,130,.5),
+
+        0 0 50px rgba(53,255,130,.25);
+}
+
+
+.logo strong {
+
+    color: var(--green);
+
+    font-weight: 800;
+
+    text-shadow:
+
+        0 0 10px var(--green),
+
+        0 0 25px var(--green),
+
+        0 0 55px rgba(53,255,130,.5);
+}
+
+
+.subtitle {
+
+    margin-top: 12px;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #7d9a89;
+}
+
+
+.header-lines {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 13px;
+}
+
+
+.header-lines span {
+
+    display: block;
+
+    height: 2px;
+
+    background: var(--green);
+
+    box-shadow: 0 0 8px var(--green);
+}
+
+
+.header-lines span:nth-child(1) {
+    width: 45px;
+}
+
+
+.header-lines span:nth-child(2) {
+    width: 15px;
+}
+
+
+.header-lines span:nth-child(3) {
+    width: 35px;
+}
+
+
+/* =====================================================
+   RELOJ PRINCIPAL
+===================================================== */
+
+.hero-clock {
+
+    position: relative;
+
+    height: 365px;
+
+    border: 1px solid rgba(53,255,130,.55);
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(4, 28, 17, .90),
+            rgba(1, 10, 6, .96)
+        );
+
+    overflow: hidden;
+
+    margin-bottom: 40px;
+
+    box-shadow:
+
+        inset 0 0 80px rgba(53,255,130,.035),
+
+        0 0 30px rgba(0,0,0,.7);
+}
+
+
+/* líneas horizontales */
+
+.hero-clock::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    top: 12px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--green),
+            transparent
+        );
+
+    box-shadow: 0 0 12px var(--green);
+}
+
+
+.hero-clock::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 12px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--green),
+            transparent
+        );
+
+    opacity: .4;
+}
+
+
+/* =====================================================
+   ESQUINAS
+===================================================== */
+
+.tech-corner {
+
+    position: absolute;
+
+    width: 55px;
+
+    height: 55px;
+
+    border-color: var(--green);
+
+    opacity: .8;
+}
+
+
+.tl {
+
+    top: 0;
+    left: 0;
+
+    border-top: 3px solid;
+    border-left: 3px solid;
+}
+
+
+.tr {
+
+    top: 0;
+    right: 0;
+
+    border-top: 3px solid;
+    border-right: 3px solid;
+}
+
+
+.bl {
+
+    bottom: 0;
+    left: 0;
+
+    border-bottom: 3px solid;
+    border-left: 3px solid;
+}
+
+
+.br {
+
+    bottom: 0;
+    right: 0;
+
+    border-bottom: 3px solid;
+    border-right: 3px solid;
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.hero-top-line {
+
+    position: absolute;
+
+    top: 50px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    color: var(--green);
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    white-space: nowrap;
+
+    text-shadow: 0 0 10px var(--green);
+}
+
+
+.hero-top-line span {
+
+    width: 70px;
+
+    height: 1px;
+
+    background: var(--green);
+
+    box-shadow: 0 0 8px var(--green);
+}
+
+
+/* =====================================================
+   CONTENIDO RELOJ
+===================================================== */
+
+.clock-content {
+
+    position: absolute;
+
+    inset: 80px 35px 70px;
+
+    display: grid;
+
+    grid-template-columns: 140px 1fr 150px;
+
+    align-items: center;
+}
+
+
+/* =====================================================
+   LADOS
+===================================================== */
+
+.clock-side {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+
+    color: #91a99b;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+.clock-side div {
+
+    text-shadow: 0 0 5px rgba(53,255,130,.2);
+}
+
+
+.clock-side.left div {
+
+    color: #8da998;
+}
+
+
+.clock-side.right {
+
+    text-align: right;
+
+    color: #829d8d;
+}
+
+
+/* =====================================================
+   RELOJ
+===================================================== */
+
+.clock-center {
+
+    text-align: center;
+}
+
+
+#clock {
+    display: inline-block;
+
+    width: 9ch;
+    min-width: 9ch;
+
+    margin: 0 auto;
+    text-align: center;
+
+    font-family: "Courier New", monospace;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+
+    font-size: clamp(70px, 9vw, 125px);
+    font-weight: 700;
+    letter-spacing: 4px;
+    line-height: 1;
+
+    color: #ecfff3;
+
+    text-shadow:
+        0 0 6px #ffffff,
+        0 0 15px var(--green),
+        0 0 35px var(--green),
+        0 0 70px rgba(53,255,130,.5);
+}
+
+
+/* =====================================================
+   FECHA
+===================================================== */
+
+.date-display {
+
+    position: absolute;
+
+    bottom: -1px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    min-width: 500px;
+
+    padding: 14px 30px;
+
+    border: 1px solid var(--green);
+
+    border-radius: 30px 30px 0 0;
+
+    background: #020d08;
+
+    color: var(--green);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    box-shadow:
+
+        0 0 15px rgba(53,255,130,.12);
+}
+
+
+.calendar-icon {
+
+    font-size: 19px;
+
+    text-shadow: 0 0 8px var(--green);
+}
+
+
+/* =====================================================
+   PANELES
+===================================================== */
+
+.panels {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =====================================================
+   PANEL
+===================================================== */
+
+.panel {
+
+    position: relative;
+
+    min-height: 390px;
+
+    padding: 22px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(4, 28, 17, .94),
+            rgba(1, 12, 7, .97)
+        );
+
+    border: 1px solid rgba(53,255,130,.55);
+
+    overflow: hidden;
+
+    box-shadow:
+
+        inset 0 0 50px rgba(53,255,130,.025),
+
+        0 0 25px rgba(0,0,0,.7);
+}
+
+
+/* esquinas panel */
+
+.panel::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 55px;
+    right: 55px;
+
+    height: 2px;
+
+    background: var(--green);
+
+    box-shadow:
+
+        0 0 8px var(--green),
+
+        0 0 20px var(--green);
+}
+
+
+/* decoración diagonal */
+
+.panel::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
+    width: 80px;
+
+    height: 80px;
+
+    border-top: 1px solid rgba(53,255,130,.35);
+
+    border-right: 1px solid rgba(53,255,130,.35);
+
+    transform: skew(-25deg);
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   PANEL HEADER
+===================================================== */
+
+.panel-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+
+.panel-title {
+
+    color: var(--white);
+
+    font-size: 16px;
+
+    letter-spacing: 1px;
+
+    text-shadow: 0 0 8px rgba(53,255,130,.4);
+}
+
+
+.title-icon {
+
+    color: var(--green);
+
+    font-size: 26px;
+
+    margin-right: 8px;
+
+    text-shadow: 0 0 10px var(--green);
+}
+
+
+.dots {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 5px);
+
+    gap: 5px;
+}
+
+
+.dots i {
+
+    width: 5px;
+
+    height: 5px;
+
+    background: var(--green);
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 6px var(--green);
+}
+
+
+/* =====================================================
+   CRONÓMETRO
+===================================================== */
+
+.inner-display {
+
+    border: 1px solid rgba(53,255,130,.38);
+
+    background: rgba(0,0,0,.3);
+
+    border-radius: 10px;
+
+    padding: 25px 10px 16px;
+
+    box-shadow: inset 0 0 20px rgba(53,255,130,.025);
+}
+
+
+#stopwatch {
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+
+    width: 9ch;
+    min-width: 9ch;
+
+    margin: 0 auto;
+    text-align: center;
+
+    font-family: "Courier New", monospace;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+
+    color: #f1fff5;
+    font-size: 39px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 1;
+
+    text-shadow:
+        0 0 8px var(--green),
+        0 0 22px rgba(53,255,130,.5);
+}
+
+
+.units {
+
+    display: flex;
+
+    justify-content: space-around;
+
+    margin-top: 10px;
+
+    color: #7d9788;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   BOTONES CRONÓMETRO
+===================================================== */
+
+.stopwatch-actions {
+
+    display: flex;
+
+    justify-content: space-around;
+
+    margin-top: 30px;
+}
+
+
+.round-button {
+
+    width: 88px;
+
+    height: 88px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(53,255,130,.55);
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(53,255,130,.07),
+            rgba(0,0,0,.55)
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    box-shadow:
+
+        inset 0 0 20px rgba(53,255,130,.04);
+}
+
+
+.round-button b {
+
+    font-size: 25px;
+
+    color: var(--green);
+
+    text-shadow: 0 0 10px var(--green);
+}
+
+
+.round-button small {
+
+    color: #8ca395;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: .5px;
+}
+
+
+.round-button:hover {
+
+    border-color: var(--green);
+
+    box-shadow:
+
+        0 0 20px rgba(53,255,130,.3),
+
+        inset 0 0 20px rgba(53,255,130,.08);
+
+    transform: scale(1.04);
+}
+
+
+/* =====================================================
+   ALARMA
+===================================================== */
+
+.alarm-display {
+
+    height: 105px;
+
+    border: 1px solid rgba(53,255,130,.38);
+
+    border-radius: 12px;
+
+    background: rgba(0,0,0,.32);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+.arrow {
+
+    color: var(--green);
+
+    font-size: 20px;
+
+    opacity: .7;
+}
+
+
+input[type="time"] {
+
+    width: 170px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: var(--green-light);
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 38px;
+
+    text-align: center;
+
+    color-scheme: dark;
+
+    text-shadow: 0 0 10px rgba(53,255,130,.4);
+}
+
+
+/* =====================================================
+   BOTÓN ALARMA
+===================================================== */
+
+.activate-alarm {
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 17px;
+
+    border: 1px solid var(--green);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(53,255,130,.08),
+            rgba(53,255,130,.02)
+        );
+
+    color: var(--green);
+
+    font-size: 11px;
+
+    box-shadow:
+
+        0 0 10px rgba(53,255,130,.1);
+}
+
+
+.activate-alarm:hover {
+
+    background: rgba(53,255,130,.12);
+
+    box-shadow:
+
+        0 0 25px rgba(53,255,130,.35);
+}
+
+
+/* =====================================================
+   ESTADO ALARMA
+===================================================== */
+
+.alarm-status-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border: 1px solid rgba(53,255,130,.25);
+
+    border-radius: 10px;
+
+    background: rgba(0,0,0,.25);
+}
+
+
+.alarm-status-box > span {
+
+    color: var(--green);
+
+    font-size: 22px;
+}
+
+
+#alarmStatus {
+
+    color: #8ba293;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   MÚSICA
+===================================================== */
+
+.song-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    border: 1px solid rgba(53,255,130,.3);
+
+    border-radius: 11px;
+
+    background: rgba(0,0,0,.3);
+}
+
+
+.wave {
+
+    width: 90px;
+
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 3px;
+
+    border-radius: 8px;
+
+    background: rgba(53,255,130,.07);
+
+}
+
+
+.wave span {
+
+    width: 4px;
+
+    background: var(--green);
+
+    box-shadow: 0 0 6px var(--green);
+
+    border-radius: 5px;
+
+    animation: wave 1s infinite ease-in-out;
+}
+
+
+.wave span:nth-child(1) { height: 15px; }
+.wave span:nth-child(2) { height: 27px; animation-delay: .1s; }
+.wave span:nth-child(3) { height: 40px; animation-delay: .2s; }
+.wave span:nth-child(4) { height: 25px; animation-delay: .3s; }
+.wave span:nth-child(5) { height: 48px; animation-delay: .4s; }
+.wave span:nth-child(6) { height: 32px; animation-delay: .5s; }
+.wave span:nth-child(7) { height: 50px; animation-delay: .6s; }
+.wave span:nth-child(8) { height: 28px; animation-delay: .7s; }
+.wave span:nth-child(9) { height: 42px; animation-delay: .8s; }
+.wave span:nth-child(10) { height: 22px; animation-delay: .9s; }
+.wave span:nth-child(11) { height: 35px; animation-delay: 1s; }
+
+
+@keyframes wave {
+
+    0%, 100% {
+        transform: scaleY(.65);
+    }
+
+    50% {
+        transform: scaleY(1);
+    }
+}
+
+
+.song-info strong {
+
+    display: block;
+
+    font-size: 12px;
+
+    margin-bottom: 8px;
+}
+
+
+.song-info small {
+
+    color: #7c9787;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   PROGRESO
+===================================================== */
+
+.music-time {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 17px;
+
+    color: #9aac9f;
+
+    font-size: 9px;
+}
+
+
+.music-progress {
+
+    height: 4px;
+
+    margin-top: 7px;
+
+    background: #244232;
+
+    border-radius: 5px;
+}
+
+
+.music-progress span {
+
+    display: block;
+
+    width: 42%;
+
+    height: 100%;
+
+    background: var(--green);
+
+    border-radius: 5px;
+
+    box-shadow: 0 0 8px var(--green);
+}
+
+
+/* =====================================================
+   CONTROLES MÚSICA
+===================================================== */
+
+.music-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-top: 22px;
+}
+
+
+.music-actions button {
+
+    width: 48px;
+
+    height: 48px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    font-size: 16px;
+}
+
+
+.music-actions .play-music {
+
+    width: 62px;
+
+    height: 62px;
+
+    border: 2px solid var(--green);
+
+    color: var(--green);
+
+    box-shadow:
+
+        0 0 15px rgba(53,255,130,.2);
+}
+
+
+/* =====================================================
+   VOLUMEN
+===================================================== */
+
+.volume-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+    color: #9aad9f;
+
+    font-size: 10px;
+}
+
+
+.volume-row input {
+
+    flex: 1;
+}
+
+
+input[type="range"] {
+
+    appearance: none;
+
+    width: 100%;
+
+    height: 4px;
+
+    background: #284536;
+
+    border-radius: 10px;
+
+    outline: none;
+}
+
+
+input[type="range"]::-webkit-slider-thumb {
+
+    appearance: none;
+
+    width: 15px;
+
+    height: 15px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow: 0 0 10px var(--green);
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   ANIMACIONES
+===================================================== */
+
+@keyframes glow {
+
+    0%, 100% {
+        opacity: .75;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+.logo strong {
+
+    animation: glow 3s infinite;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+    .clock-content {
+
+        grid-template-columns: 80px 1fr 90px;
+    }
+
+    .clock-side {
+
+        font-size: 8px;
+    }
+
+    .panels {
+
+        grid-template-columns: 1fr;
+    }
+
+    .panel {
+
+        min-height: 330px;
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .app {
+
+        width: 94%;
+
+        padding-top: 20px;
+    }
+
+
+    .logo {
+
+        font-size: 45px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .subtitle {
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .hero-clock {
+
+        height: 300px;
+    }
+
+
+    .hero-top-line {
+
+        top: 35px;
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .hero-top-line span {
+
+        width: 25px;
+    }
+
+
+    .clock-content {
+
+        inset: 65px 15px 55px;
+
+        display: block;
+    }
+
+
+    .clock-side {
+
+        display: none;
+    }
+
+
+    #clock {
+
+        margin-top: 50px;
+
+        font-size: 46px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .date-display {
+
+        min-width: 90%;
+
+        padding: 11px 10px;
+
+        font-size: 8px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .panel {
+
+        padding: 20px;
+    }
+
+
+    #stopwatch {
+
+        font-size: 29px;
+    }
+
+
+    .round-button {
+
+        width: 72px;
+
+        height: 72px;
+    }
+
+
+    .round-button b {
+
+        font-size: 20px;
+    }
+
+
+    input[type="time"] {
+
+        font-size: 28px;
+
+        width: 145px;
+    }
+
+}
